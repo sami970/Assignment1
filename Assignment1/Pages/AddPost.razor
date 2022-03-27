@@ -1,0 +1,98 @@
+﻿@page "/AddPost"
+@using Domain.Models
+@using Blazor.Services
+@using UIElements
+@using System.Security.Claims
+@using Assignment1.Authentication
+@using Assignment1.Models
+@using System.Runtime.CompilerServices
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IAuthService authService
+
+@inject IForumHome ForumHome
+@inject NavigationManager NavMgr
+<div class="box">
+    <h3>AddPost</h3>
+    <EditForm Model="@newPostItem" OnValidSubmit="@AddNewPost">
+        <DataAnnotationsValidator/>
+        <ValidationSummary/>
+        <div class="form-group field">
+            <span>
+                <label>User Id:</label>
+            </span>
+            <span>
+                <InputNumber @bind-Value="newPostItem.OwnerId"/>
+            </span>
+        </div>
+        <div class="form-group field">
+            <span>
+                <label>Title:</label>
+            </span>
+            <span>
+                <InputTextArea rows="4" @bind-Value="newPostItem.Title"/>
+            </span>
+        </div>
+        <p class="actions">
+            <button class="acceptbtn" type="submit">Create</button>
+        </p>
+    </EditForm>
+    
+        @if (!string.IsNullOrEmpty(errorLabel))
+        {
+            <label class="errorLabel" >@errorLabel</label>
+        }
+        @if (showModal)
+        {
+            <Modal>
+                <p>You have successfully added a new post item. You should be very proud of yourself</p>
+                <button @onclick="@Proceed">Wonderful</button>
+            </Modal>
+        }
+</div>
+
+@code {
+    
+    private Forum newPostItem = new Forum();
+    private string errorLabel = String.Empty;
+    
+    
+    private bool showModal;
+
+    private async Task AddNewPost()
+    {
+        errorLabel = "";
+        checkLogin();
+        try
+        {
+            await ForumHome.AddAsync(newPostItem);
+            showModal = true;
+            newPostItem = new Forum();
+           
+        }
+        catch (Exception e)
+        {
+            errorLabel = e.Message;
+        }
+        
+    }
+    
+    protected override async Task OnInitializedAsync()
+    {
+        checkLogin();
+    }
+    private void Proceed()
+    {
+        showModal = false;
+        NavMgr.NavigateTo("/Forums");
+    }
+
+    public void checkLogin()
+    {
+
+        if (AuthServiceImpl.getCurrentUser() == null)
+            {
+                NavMgr.NavigateTo("/Login");
+            } 
+    }
+
+}

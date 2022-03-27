@@ -1,0 +1,123 @@
+.box[b-8o4x69ugbx] {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 250px;
+    padding: 25px;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.field[b-8o4x69ugbx] {
+    margin-top: 20px;
+}
+
+.acceptbtn[b-8o4x69ugbx] {
+    background-color:lightgreen;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.acceptbtn:hover[b-8o4x69ugbx] {
+    background-color: #00d900;
+}
+
+.switch[b-8o4x69ugbx] {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input[b-8o4x69ugbx] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider[b-8o4x69ugbx] {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider[b-8o4x69ugbx]:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider[b-8o4x69ugbx] {
+    background-color: #2196F3;
+}
+
+input:checked + .slider[b-8o4x69ugbx]:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round[b-8o4x69ugbx] {
+    border-radius: 34px;
+}
+
+.slider.round[b-8o4x69ugbx]:before {
+    border-radius: 50%;
+}
+/* filters */
+.filterbar[b-8o4x69ugbx] {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 5px;
+    display: inline-block;
+
+}
+
+.filterscontainer[b-8o4x69ugbx]{
+    display: flex;
+}
+
+.filter[b-8o4x69ugbx] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+}
+
+.completedstatusfield[b-8o4x69ugbx] {
+    width: 100px;
+    text-align: center;
+    font-size: large;
+    height: 30px;
+}
+
+.owneridfield[b-8o4x69ugbx] {
+    width: 100px;
+    text-align: center;
+}
+
+.funnel[b-8o4x69ugbx]{
+    width:30px;
+    height:30px;
+    cursor: pointer;
+}
+
+.errorLabel[b-8o4x69ugbx]{
+    background-color: #00d900;
+}

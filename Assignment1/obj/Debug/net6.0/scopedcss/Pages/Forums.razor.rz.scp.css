@@ -1,0 +1,98 @@
+.switch[b-ck3lughxti] {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input[b-ck3lughxti] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider[b-ck3lughxti] {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider[b-ck3lughxti]:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider[b-ck3lughxti] {
+    background-color: #2196F3;
+}
+
+input:focus + .slider[b-ck3lughxti] {
+    /*box-shadow: 0 0 1px #2196F3;*/
+}
+
+input:checked + .slider[b-ck3lughxti]:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round[b-ck3lughxti] {
+    border-radius: 34px;
+}
+
+.slider.round[b-ck3lughxti]:before {
+    border-radius: 50%;
+}
+
+/* filters */
+.filterbar[b-ck3lughxti] {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 5px;
+    display: inline-block;
+
+}
+
+.filterscontainer[b-ck3lughxti]{
+    display: flex;
+}
+
+.filter[b-ck3lughxti] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+}
+
+.completedstatusfield[b-ck3lughxti] {
+    width: 100px;
+    text-align: center;
+    font-size: large;
+    height: 30px;
+}
+
+.owneridfield[b-ck3lughxti] {
+    width: 100px;
+    text-align: center;
+}
+
+.funnel[b-ck3lughxti]{
+    width:30px;
+    height:30px;
+    cursor: pointer;
+}
